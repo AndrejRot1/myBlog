@@ -9,6 +9,11 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your secret key'
 
 
+global username, password
+
+username = ''
+password = ''
+
 
 
 def check():
@@ -40,10 +45,11 @@ def get_post(post_id):
 
 @app.route('/')
 def index():
+    global username
     try:
         username
     except:
-        username = 'andrej'
+        username = ''
     print(username)
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM posts').fetchall()
@@ -135,7 +141,7 @@ def login():
                  return redirect(url_for('index'))
              if test == False:
                  return render_template('login.html')
-    return render_template('login.html')
+    return render_template('login.html',username = username )
 
 
 @app.route('/logout')
