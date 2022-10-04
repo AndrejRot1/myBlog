@@ -2,7 +2,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %} Welcome to myBlog {% endblock %}</h1>
+    <h1>{% block title %}myBlog{% endblock %}</h1>
     <br>
     {% for post in posts %}
         <a href="{{ url_for('post', post_id=post['id']) }}">

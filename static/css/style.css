@@ -3,4 +3,17 @@ h1 {
     color: brown;
     text-align: center;
     padding: 10px;
+    position:absolute;
+}
+
+h2 {
+  h2:after {
+    border-bottom: 4px solid #ae263d;
+    content: "";
+    display: block;
+    width: 50px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position:absolute;
 }
